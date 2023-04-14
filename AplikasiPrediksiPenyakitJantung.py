@@ -115,7 +115,7 @@ if st.button("Predict"):
 # about page
 if about==True and home==False:
     url = 'https://www.kaggle.com/datasets/gnwnupb/dataprediksipenyakitjantung'
-    ur2 = 'https://github.com/Gunawan1603/15_Aplikasi-Prediksi-Penyakit-Jantung.io.git'
+    url1 = 'https://github.com/Gunawan1603/15_Aplikasi-Prediksi-Penyakit-Jantung.io.git'
     
     st.markdown("<h2 style='text-align: center; color: Red; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
     st.image("©-iStock-peterschreiber.media.jpg")
@@ -124,7 +124,7 @@ if about==True and home==False:
     st.markdown("<p  color: white;'>Dataset yang digunakan pada sistem ini memiliki <b>4 fitur</b> termasuk kelas, Dataset yang digunakan dalam sistem ini menggunakan dataset yang berada pada website Kaggle.com . Dataset yang berjudul <i>Data Prediksi Penyakit Jantung</i>, dataset untuk mendeteksi apakah seseorang mengidap Penyakit Jantung atau tidak berdasarkan berbagai faktor seperti <i>Chest Pain</i> (mg/dL),<i>Blood Pressure(BP)</i> (mm Hg),<i>Cholestrol</i>, Max Heart Rate(HR)</i>, semua fitur yang disebutkan bertipe numerik.</p>", unsafe_allow_html=True)
     
     st.info("Dataset : [link](%s)" % url,icon="ℹ️")
-    st.info("Github : [link](%s)" % ur2,icon="ℹ️")
+    st.info("Github : [link](%s)" % url1,icon="ℹ️")
     
     st.markdown("<h4 style='text-align: center; color: Red; margin:0 ; padding:0;'>Tahap preprosessing</h4>", unsafe_allow_html=True)
 
@@ -141,13 +141,10 @@ if about==True and home==False:
     st.markdown("<h4 style='text-align: center; color: Red; margin:0 ; padding:0;'>Penjelasan Singkat</h4>", unsafe_allow_html=True)
 
     st.write('Algoritma Random Forest disebut sebagai salah satu algoritma machine learning terbaik, sama seperti Naïve Bayes dan Neural Network. Random Forest adalah kumpulan dari decision tree atau pohon keputusan. Algoritma ini merupakan kombinasi masing-masing tree dari decision tree yang kemudian digabungkan menjadi satu model. Biasanya, Random Forest dipakai untuk masalah regresi dan klasifikasi dengan kumpulan data yang berukuran besar..')
-    #st.info("[Percobaan model pertama](%s) | [Percobaan model Kedua](%s) | [Percobaan model Ketiga](%s) | [Percobaan model Keempat](%s)" % (n8,n9,s8,s10),icon="ℹ️")     
-
-
+      
 
 #menampilkan halaman utama
-    #if option == 'home' or option == '':
-    #st.write("""# Halaman Utama""") #menampilkan halaman utama
+
 elif option == '📊 Dataframe':
     st.write("""## Dataframe""") #menampilkan judul halaman dataframe
     st.markdown('**Menampilkan 5(lima) baris pertama** dataset digunakan sebagai contoh.')
@@ -155,12 +152,7 @@ elif option == '📊 Dataframe':
 
     st.markdown('**Menampilkan 5(lima) baris Terakhir** dataset digunakan sebagai contoh.')
     st.write(df.tail(5)) #menampilkan 5(lima) baris Terakhir dari kumpulan data.   
-    #membuat dataframe dengan pandas yang terdiri dari 2 kolom dan 4 baris data
-    #df = pd.DataFrame({
-        #'Column 1':[1,2,3,4],
-       #'Column 2':[10,12,14,16]
-    #})
-    #df #menampilkan dataframe
+  
 elif option == '📈 Chart':
     st.write("""## Draw Charts""") #menampilkan judul halaman 
 
