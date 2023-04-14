@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report,confusion_matrix
-from sklearn.metrics import accuracy_score,classification_report,plot_confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 # page title
 st.set_page_config(
@@ -33,7 +33,7 @@ about=st.sidebar.button('📚 About')
 #st.sidebar.radio("Plots")
 # home page
 if home==False and about==False or home==True and about==False:
-     st.markdown("<h1 style='text-align: center; color: Blue; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
+     st.markdown("<h1 style='text-align: center; color: Blue; margin:0 ; padding:0;'>💗 Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
 
 option = st.sidebar.selectbox(
     'Silakan pilih:',
@@ -76,9 +76,13 @@ if st.button("Predict"):
             y_pred = model.predict(x_test)
             st.write("**Hasil Persentasi Accuracy dari model Random Forest adalah ", accuracy.round(2),"%**")
             st.subheader("Confusion Matrix") 
-            plot_confusion_matrix(model, x_test, y_test)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+           
+            fig, ax = plt.subplots(figsize=(8, 6))
+            ConfusionMatrixDisplay.from_predictions(
+             y_test, y_pred,  ax=ax, colorbar=False
+             )
             st.pyplot()
+            
             st.write("Note : ")
             st.write("Presence -> Mungkin **Terkena** Penyakit Jantung")
             st.write("Absence -> Mungkin **Aman** Penyakit Jantung")
@@ -92,9 +96,13 @@ if st.button("Predict"):
             y_pred = model.predict(x_test)
             st.write("**Hasil Persentasi Accuracy dari model Random Forest adalah ", accuracy.round(2),"%**")
             st.subheader("Confusion Matrix") 
-            plot_confusion_matrix(model, x_test, y_test)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            
+            fig, ax = plt.subplots(figsize=(8, 6))
+            ConfusionMatrixDisplay.from_predictions(
+             y_test, y_pred,  ax=ax, colorbar=False
+             )
             st.pyplot()
+
             st.write("Note : ")
             st.write("Presence -> Mungkin **Terkena** Penyakit Jantung")
             st.write("Absence -> Mungkin **Aman** Penyakit Jantung")
@@ -105,6 +113,7 @@ if st.button("Predict"):
 # about page
 if about==True and home==False:
     url = 'https://www.kaggle.com/datasets/gnwnupb/dataprediksipenyakitjantung'
+    ur2 = 'https://github.com/Gunawan1603/15_Aplikasi-Prediksi-Penyakit-Jantung.io.git'
     
     st.markdown("<h2 style='text-align: center; color: Red; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
     st.image("©-iStock-peterschreiber.media.jpg")
@@ -113,6 +122,7 @@ if about==True and home==False:
     st.markdown("<p  color: white;'>Dataset yang digunakan pada sistem ini memiliki <b>4 fitur</b> termasuk kelas, Dataset yang digunakan dalam sistem ini menggunakan dataset yang berada pada website Kaggle.com . Dataset yang berjudul <i>Data Prediksi Penyakit Jantung</i>, dataset untuk mendeteksi apakah seseorang mengidap Penyakit Jantung atau tidak berdasarkan berbagai faktor seperti <i>Chest Pain</i> (mg/dL),<i>Blood Pressure(BP)</i> (mm Hg),<i>Cholestrol</i>, Max Heart Rate(HR)</i>, semua fitur yang disebutkan bertipe numerik.</p>", unsafe_allow_html=True)
     
     st.info("Dataset : [link](%s)" % url,icon="ℹ️")
+    st.info("Github : [link](%s)" % ur2,icon="ℹ️")
     
     st.markdown("<h4 style='text-align: center; color: Red; margin:0 ; padding:0;'>Tahap preprosessing</h4>", unsafe_allow_html=True)
 
@@ -168,6 +178,6 @@ elif option == '📈 Chart':
     #Gunawan-312010191
 
 
-st.info("Made in Gunawan_TI20B1_UPB,with ❤️ by Streamlit")
+st.info("Made in Gunawan_TI20B1_Universitas Pelita Bangsa,with ❤️ by Streamlit")
      
        
