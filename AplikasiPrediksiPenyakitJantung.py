@@ -81,6 +81,7 @@ if st.button("Predict"):
             ConfusionMatrixDisplay.from_predictions(
              y_test, y_pred,  ax=ax, colorbar=False
              )
+            st.set_option('deprecation.showPyplotGlobalUse', False)
             st.pyplot()
             
             st.write("Note : ")
@@ -101,6 +102,7 @@ if st.button("Predict"):
             ConfusionMatrixDisplay.from_predictions(
              y_test, y_pred,  ax=ax, colorbar=False
              )
+            st.set_option('deprecation.showPyplotGlobalUse', False)
             st.pyplot()
 
             st.write("Note : ")
