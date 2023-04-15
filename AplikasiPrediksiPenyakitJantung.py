@@ -23,7 +23,7 @@ header {visibility: hidden;}
 
 st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">', unsafe_allow_html=True)
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-st.markdown(' <div style="position: fixed; top: 0; left: 0; z-index: 9999; width: 100%; background: rgb(14, 17, 23); ; text-align: center;"><a href="https://github.com/Gunawan1603/15_Aplikasi-Prediksi-Penyakit-Jantung.io.git" target="_blank"><button style="border-radius: 12px;position: relative; top:50%; margin:10px;"><i class="fa fa-github"></i> Source Code</button></a></div>', unsafe_allow_html=True)
+st.markdown(' <div style="position: fixed; top: 0; left: 0; z-index: 9999; width: 100%; background: rgb(14, 17, 23); ; text-align: center;"><a href="https://github.com/Gunawan1603/15_Aplikasi-Prediksi-Penyakit-Jantung.io.git" target="_blank"><button style="border-radius: 12px;position: relative; top:50%; margin:10px;"><i class="fa fa-github"></i> Source Code</button></a><a href="https://www.kaggle.com/datasets/gnwnupb/dataprediksipenyakitjantung" target="_blank"><button  style="border-radius: 12px;position: relative; top:50%;"><i style="color: orange" class="fa fa-Kaggle"></i> Dataset Kaggle.com</button></a></div>', unsafe_allow_html=True)
 
 
 #Home Page Sidebar
@@ -115,17 +115,13 @@ if st.button("Predict"):
 
 # about page
 if about==True and home==False:
-    url = 'https://www.kaggle.com/datasets/gnwnupb/dataprediksipenyakitjantung'
-    
+   
     st.markdown("<h2 style='text-align: center; color: Red; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
     st.image("©-iStock-peterschreiber.media.jpg")
     st.write('Sistem Prediksi Penyakit Jantung adalah sebuah sistem yang bertujuan untuk memprediksi penyakit jantung dini. Sistem ini dibuat menggunakan bahasa pemrograman python dan library streamlit.')
     st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Dataset</h4>", unsafe_allow_html=True)
     st.markdown("<p  color: white;'>Dataset yang digunakan pada sistem ini memiliki <b>4 fitur</b> termasuk kelas, Dataset yang digunakan dalam sistem ini menggunakan dataset yang berada pada website Kaggle.com . Dataset yang berjudul <i>Data Prediksi Penyakit Jantung</i>, dataset untuk mendeteksi apakah seseorang mengidap Penyakit Jantung atau tidak berdasarkan berbagai faktor seperti <i>Chest Pain</i> (mg/dL),<i>Blood Pressure(BP)</i> (mm Hg),<i>Cholestrol</i>, Max Heart Rate(HR)</i>, semua fitur yang disebutkan bertipe numerik.</p>", unsafe_allow_html=True)
     
-    
-    st.info("Dataset : [link](%s)" % url,icon="ℹ️")
-
     st.markdown("<h4 style='text-align: center; color: Red; margin:0 ; padding:0;'>Tahap preprosessing</h4>", unsafe_allow_html=True)
 
     st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Metode yang digunakan</h4>", unsafe_allow_html=True)
